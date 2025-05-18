@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ঈদের সেরা অফার!</title> <meta property="og:title" content="ঈদের সেরা অফার! আপনার জন্য বিশেষ চমক!" />
-    <meta property="og:description" content="এই দে অবিশ্বাস্য সব অফার জিতুন! সম্পূর্ণ বিনামূল্যে আকর্ষণীয় ডাটা, টকটাইম সহ আরও অনেক কিছু! এখনই লিঙ্কে ক্লিক করে আপনার ঈদ উপহার সংগ্রহ করুন। অফার সীমিত!" />
+    <meta property="og:description" content="এই ঈদে অবিশ্বাস্য সব অফার জিতুন! সম্পূর্ণ বিনামূল্যে আকর্ষণীয় ডাটা, টকটাইম সহ আরও অনেক কিছু! এখনই লিঙ্কে ক্লিক করে আপনার ঈদ উপহার সংগ্রহ করুন। অফার সীমিত!" />
     <meta property="og:image" content="https://i.ibb.co/FLg1mqjQ/images-Aspose-Words-d2005c40-2ca9-4667-8033-66d47f6febc2-001.png" />
     <meta property="og:url" content="YOUR_WEBSITE_URL_HERE" /> <meta property="og:type" content="website" />
 
@@ -55,22 +55,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        header .eid-banner-link {
-            display: inline-block;
-            margin-bottom: 25px;
-            border-radius: 15px;
-            overflow: hidden;
-            border: 3px solid var(--secondary-color);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-        }
-
-        header .eid-banner-link img {
-            width: 100%;
-            max-width: 380px;
-            height: auto;
-            display: block;
-        }
-        header img { /* সাধারণ img ট্যাগের জন্য একটি বেসিক স্টাইল যদি আগের ক্লাসগুলো না থাকে */
+        header img {
             max-width: 380px;
             height: auto;
             display: block;
@@ -79,7 +64,6 @@
             border: 3px solid var(--secondary-color);
             box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
-
 
         h2, h3 {
             font-family: var(--heading-font);
@@ -154,13 +138,14 @@
         #share-info-section { padding: 20px; background-color: #fff8e1; border-radius: 15px; margin-top: 20px; border: 2px solid var(--secondary-color); }
         #share-info-section p { font-size: 1.1em; line-height: 1.6; color: var(--primary-color); }
         #wonOffer { font-weight: 700; color: var(--accent-color); font-size: 1.4em; display: inline-block; margin: 5px 0; padding: 5px 10px; background-color: var(--secondary-color); color: var(--primary-color); border-radius: 8px; }
-        .referral-link-container { display: flex; flex-direction: column; align-items: center; margin: 20px 0; gap: 10px; }
+        .referral-link-container { display: flex; flex-direction: column; align-items: center; margin: 20px 0 10px 0; gap: 10px; } /* Reduced bottom margin */
         #referralLink { padding: 12px 18px; border: 2px solid #ccc; border-radius: 25px; font-size: 0.95em; font-family: 'Courier New', Courier, monospace; flex-grow: 1; background-color: #f1f1f1; color: var(--primary-color); text-align: center; width: calc(100% - 40px); box-sizing: border-box; }
         #copyLinkButton { background-color: var(--primary-color); color: var(--light-text-color); padding: 12px 25px; border: none; border-radius: 25px; cursor: pointer; font-size: 1em; font-weight: 600; font-family: var(--heading-font); transition: background-color 0.3s, transform 0.2s; width: auto; }
         #copyLinkButton:hover { background-color: #073752; transform: scale(1.05); }
-        #shareProgress { font-size: 1em; color: var(--primary-color); font-weight: 500; margin-top: 10px; }
+        
+        #shareProgress { font-size: 1em; color: var(--primary-color); font-weight: 500; margin-top:5px; margin-bottom:10px; }
         #shareProgress span { color: var(--accent-color); font-weight: 700; font-size: 1.2em; }
-        #shareMessage { margin-top:15px; font-size:1em; font-weight: 600; }
+        #shareMessage { margin-top:10px; margin-bottom: 15px; font-size:1em; font-weight: 600; }
 
         .hidden { display: none !important; }
         footer { margin-top: 30px; font-size: 0.9em; color: var(--light-text-color); opacity: 0.8; }
@@ -200,23 +185,33 @@
                 <div id="scratchCardContainer">
                     <div id="scratchCoverText">ঈদ মোবারক! <br> উপহার পেতে এখানে টাচ করে ঘষুন</div>
                     <canvas id="scratchCard" width="320" height="160"></canvas>
-                    <div id="offerText" class="hidden"> {/* প্রাথমিকভাবে hidden ক্লাস থাকবে */}
+                    <div id="offerText" class="hidden">
                         {অফার এখানে}
                     </div>
                 </div>
-                <button id="shareButton" class="share-button hidden">বন্ধুদের জানান ও অফারটি নিন!</button>
-            </section>
+                </section>
 
             <section id="share-info-section" class="hidden">
                 <h3>🎉 সাবাশ! আপনি একটি অফার জিতেছেন! 🎉</h3>
                 <p>আপনার প্রাপ্ত অফার: <strong id="wonOffer"></strong></p>
-                <p>এই দারুণ অফারটি নিশ্চিত করতে, নিচের রেফারেল লিঙ্কটি আপনার বন্ধুদের সাথে শেয়ার করুন। মাত্র <strong style="color:var(--accent-color)">২০টি সফল শেয়ার</strong> সম্পন্ন হলেই অফারটি আপনার!</p>
+                <p>এই দারুণ অফারটি নিশ্চিত করতে, নিচের রেফারেল লিঙ্কটি আপনার বন্ধুদের সাথে শেয়ার করুন। মাত্র <strong style="color:var(--accent-color)">১৫টি সফল শেয়ার</strong> সম্পন্ন হলেই অফারটি আপনার!</p>
                 <div class="referral-link-container">
                     <input type="text" id="referralLink" readonly>
                     <button id="copyLinkButton" class="custom-button" style="background: var(--primary-color); color: var(--light-text-color); max-width:160px; font-size:1em;">লিঙ্ক কপি করুন</button>
                 </div>
-                <p id="shareProgress">এখনও <span id="remainingShares">20</span> টি শেয়ার বাকি।</p>
-                <p id="shareMessage" style="color: var(--primary-color);"></p>
+                <button id="shareButton" class="share-button" style="margin-top: 10px; margin-bottom:20px; max-width:300px; width:100%;">বন্ধুদের জানান ও অফারটি নিন!</button>
+                
+                <div id="shareProgressBarContainer" style="width: 100%; max-width: 300px; background-color: #e0e0e0; border-radius: 10px; margin: 0 auto 10px auto; padding: 3px; box-shadow: inset 0 1px 3px rgba(0,0,0,.2);">
+                    <div id="shareProgressBar" style="width: 0%; height: 22px; background: linear-gradient(135deg, var(--success-color), #27ae60); border-radius: 7px; text-align: center; line-height: 22px; color: white; font-weight: bold; font-size: 0.9em; transition: width 0.4s ease-in-out;">
+                        0%
+                    </div>
+                </div>
+                <p id="shareProgress" style="margin-top:5px; margin-bottom:10px;">এখনও <span id="remainingShares">15</span> টি শেয়ার বাকি।</p>
+                <p id="shareMessage" style="color: var(--primary-color); margin-bottom:15px;"></p>
+                
+                <div id="congratsMessage" class="hidden" style="padding: 15px; background-color: #e6ffed; border: 2px solid var(--success-color); border-radius: 10px; margin-top: 5px; font-size: 1.2em; color: var(--primary-color); font-weight: normal; text-align:center;">
+                    {অভিনন্দন বার্তা এখানে আসবে}
+                </div>
             </section>
         </main>
 
@@ -255,7 +250,7 @@
 
         const phoneNumberInput = document.getElementById('phoneNumber');
         const activateButton = document.getElementById('activateButton');
-        const shareButton = document.getElementById('shareButton');
+        const shareButton = document.getElementById('shareButton'); // এটি এখন #share-info-section এ
         const copyLinkButton = document.getElementById('copyLinkButton');
 
         const scratchCardContainer = document.getElementById('scratchCardContainer');
@@ -263,11 +258,18 @@
         const ctx = canvas.getContext('2d');
         const offerTextElement = document.getElementById('offerText');
         const scratchCoverTextElement = document.getElementById('scratchCoverText');
+        
         const wonOfferElement = document.getElementById('wonOffer');
         const referralLinkInput = document.getElementById('referralLink');
         const remainingSharesElement = document.getElementById('remainingShares');
         const shareMessageElement = document.getElementById('shareMessage');
         const toastElement = document.getElementById('toast');
+
+        // নতুন এলিমেন্ট
+        const shareProgressBar = document.getElementById('shareProgressBar');
+        const shareProgressBarContainer = document.getElementById('shareProgressBarContainer');
+        const congratsMessageDiv = document.getElementById('congratsMessage');
+
 
         const offers = [
             "১GB", "৫০০MB", "৭০০MB", "২GB", "২০ টাকা রিচার্জ", "২০ মিনিট",
@@ -276,7 +278,7 @@
         ];
         let currentOffer = '';
         let referralCode = '';
-        const SHARES_NEEDED = 20;
+        const SHARES_NEEDED = 15; // শেয়ার সংখ্যা পরিবর্তন করা হয়েছে
         let sharesCompleted = parseInt(localStorage.getItem('eidOfferSharesCompleted_v2')) || 0;
 
 
@@ -387,7 +389,20 @@
                 offerTextElement.classList.add('revealed');
                 scratchCardContainer.style.borderStyle = 'solid';
                 scratchCardContainer.style.borderColor = 'var(--success-color)';
-                setTimeout(() => { shareButton.classList.remove('hidden'); }, 500);
+                
+                setTimeout(() => {
+                    scratchCardSection.classList.add('hidden');
+                    shareInfoSection.classList.remove('hidden');
+                    wonOfferElement.textContent = currentOffer;
+
+                    const siteUrl = document.querySelector('meta[property="og:url"]');
+                    const baseUrl = siteUrl && siteUrl.getAttribute('content') !== "YOUR_WEBSITE_URL_HERE" ? siteUrl.getAttribute('content') : (window.location.origin + window.location.pathname);
+                    referralCode = 'eid' + Date.now().toString(36) + Math.random().toString(36).substring(2, 5);
+                    const shareUrl = `${baseUrl}?ref=${referralCode}&via=share`;
+                    referralLinkInput.value = shareUrl;
+                    
+                    updateShareProgressUI(); // Update UI when section is shown
+                }, 700); // Delay to see offer
 
                 canvas.removeEventListener('mousedown', startDrawing);
                 canvas.removeEventListener('touchstart', startDrawing);
@@ -415,58 +430,40 @@
             }
         });
 
-        shareButton.addEventListener('click', () => {
+        shareButton.addEventListener('click', () => { // এই বাটনটি এখন #share-info-section এ
             const ogTitleElement = document.querySelector('meta[property="og:title"]');
             const ogDescriptionElement = document.querySelector('meta[property="og:description"]');
 
             const shareTitle = ogTitleElement ? ogTitleElement.getAttribute('content') : 'ঈদের সেরা অফার!';
             const dynamicShareText = `দেখুন আমি কী জিতেছি: "${currentOffer}"! আপনিও এই ঈদে দারুণ সব অফার জিততে পারেন। এখনই লিঙ্কে ক্লিক করে আপনার ঈদ উপহারটি লুফে নিন। দেরি করলেই মিস! 🎁`;
             const shareText = ogDescriptionElement ? `${dynamicShareText} ${ogDescriptionElement.getAttribute('content')}` : dynamicShareText;
+            const shareUrl = referralLinkInput.value;
 
-            const siteUrl = document.querySelector('meta[property="og:url"]');
-            const baseUrl = siteUrl && siteUrl.getAttribute('content') !== "YOUR_WEBSITE_URL_HERE" ? siteUrl.getAttribute('content') : (window.location.origin + window.location.pathname);
-
-            referralCode = 'eid' + Date.now().toString(36) + Math.random().toString(36).substring(2, 5);
-            const shareUrl = `${baseUrl}?ref=${referralCode}&via=share`;
-
-            referralLinkInput.value = shareUrl;
+            if (!shareUrl) {
+                showToast('দুঃখিত, শেয়ার লিঙ্ক প্রস্তুত নয়।');
+                return;
+            }
 
             if (navigator.share) {
-                console.log("শেয়ার করার চেষ্টা করা হচ্ছে:", { title: shareTitle, text: shareText, url: shareUrl });
                 navigator.share({
                     title: shareTitle,
                     text: shareText,
                     url: shareUrl
                 }).then(() => {
                     showToast('শেয়ার করার জন্য আপনাকে ধন্যবাদ!');
-                    sharesCompleted++;
-                    localStorage.setItem('eidOfferSharesCompleted_v2', sharesCompleted.toString());
-                    updateShareProgressUI();
-                    if (shareInfoSection.classList.contains('hidden')) {
-                        scratchCardSection.classList.add('hidden');
-                        shareInfoSection.classList.remove('hidden');
-                        wonOfferElement.textContent = currentOffer;
+                    if(sharesCompleted < SHARES_NEEDED) { // Limit incrementing beyond needed shares visually
+                       sharesCompleted++;
+                       localStorage.setItem('eidOfferSharesCompleted_v2', sharesCompleted.toString());
                     }
+                    updateShareProgressUI();
                 }).catch((error) => {
                     console.error('শেয়ার করতে সমস্যা:', error);
                     if (error.name !== 'AbortError') {
                        showToast('দুঃখিত, শেয়ার করা যায়নি। লিঙ্কটি কপি করে ম্যানুয়ালি শেয়ার করুন।');
                     }
-                    if (shareInfoSection.classList.contains('hidden')) {
-                        scratchCardSection.classList.add('hidden');
-                        shareInfoSection.classList.remove('hidden');
-                        wonOfferElement.textContent = currentOffer;
-                    }
-                    updateShareProgressUI();
                 });
             } else {
                 showToast('দুঃখিত, আপনার ব্রাউজার স্বয়ংক্রিয় শেয়ারিং সমর্থন করে না। লিঙ্কটি কপি করে বন্ধুদের সাথে শেয়ার করুন।');
-                if (shareInfoSection.classList.contains('hidden')) {
-                    scratchCardSection.classList.add('hidden');
-                    shareInfoSection.classList.remove('hidden');
-                    wonOfferElement.textContent = currentOffer;
-                }
-                updateShareProgressUI();
             }
         });
 
@@ -476,22 +473,56 @@
             try {
                 document.execCommand('copy');
                 showToast('রেফারেল লিঙ্ক সফলভাবে কপি করা হয়েছে!');
-            } catch (err) {
+            } catch (err)
+            {
                 showToast('লিঙ্ক কপি করা যায়নি। অনুগ্রহ করে ম্যানুয়ালি চেষ্টা করুন।');
             }
             window.getSelection().removeAllRanges();
         });
 
         function updateShareProgressUI() {
-            const remaining = SHARES_NEEDED - sharesCompleted;
+            const actualSharesCompleted = Math.min(sharesCompleted, SHARES_NEEDED); // Cap at SHARES_NEEDED for display
+            const remaining = SHARES_NEEDED - actualSharesCompleted;
             remainingSharesElement.textContent = Math.max(0, remaining);
+
+            const progressPercentage = Math.min((actualSharesCompleted / SHARES_NEEDED) * 100, 100);
+            shareProgressBar.style.width = progressPercentage + '%';
+            shareProgressBar.textContent = Math.round(progressPercentage) + '%';
+
+            const referralLinkContainer = document.querySelector('.referral-link-container');
+
             if (remaining <= 0) {
-                shareProgress.innerHTML = `🎉 অভিনন্দন! আপনি সফলভাবে <strong style="color:var(--success-color)">${SHARES_NEEDED}</strong> টি শেয়ার সম্পন্ন করেছেন!`;
+                document.getElementById('shareProgress').innerHTML = `🎉 অভিনন্দন! আপনি সফলভাবে <strong style="color:var(--success-color)">${SHARES_NEEDED}</strong> টি শেয়ার সম্পন্ন করেছেন!`;
                 shareMessageElement.textContent = 'আপনার অফারটি অ্যাকাউন্টে শীঘ্রই যোগ হয়ে যাবে। ঈদ মোবারক!';
                 shareMessageElement.style.color = 'var(--success-color)';
+
+                congratsMessageDiv.innerHTML = `🎉 অভিনন্দন! আপনি <strong style="font-size: 1.1em; color: var(--accent-color);">${currentOffer}</strong> অফারটি জিতেছেন! আপনার অ্যাকাউন্টে অফারটি শীঘ্রই পাঠানো হবে।`;
+                congratsMessageDiv.classList.remove('hidden');
+                
+                congratsMessageDiv.style.opacity = '0';
+                congratsMessageDiv.style.transform = 'scale(0.8) translateY(10px)';
+                congratsMessageDiv.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+                setTimeout(() => {
+                    congratsMessageDiv.style.opacity = '1';
+                    congratsMessageDiv.style.transform = 'scale(1) translateY(0px)';
+                }, 50);
+
+                shareButton.classList.add('hidden');
+                referralLinkContainer.style.display = 'none';
+                shareProgressBarContainer.style.marginTop = '5px';
+                shareMessageElement.style.marginTop = '10px';
+
             } else {
                  shareMessageElement.textContent = `অফারটি নিশ্চিত করতে আরও ${remaining} টি শেয়ার প্রয়োজন।`;
                  shareMessageElement.style.color = 'var(--primary-color)';
+                 congratsMessageDiv.classList.add('hidden');
+                 congratsMessageDiv.style.opacity = '0'; // Reset for next time
+                 congratsMessageDiv.style.transform = 'scale(0.8) translateY(10px)';
+
+
+                 shareButton.classList.remove('hidden');
+                 referralLinkContainer.style.display = 'flex'; // or 'block' or '' based on original
+                 if (window.innerWidth >= 500) { referralLinkContainer.style.display = 'row';} else {referralLinkContainer.style.display = 'column';} // Restore responsive display
             }
         }
 
@@ -504,9 +535,9 @@
                 localStorage.setItem(`visited_ref_${refCodeFromUrl}_v2`, 'true');
             }
         }
-        updateShareProgressUI();
+        updateShareProgressUI(); // Initial UI setup
     });
     </script>
 <script type='text/javascript' src='//pl26667650.profitableratecpm.com/51/8f/d0/518fd0ce7157d30b4abfe0ddd46ad5bb.js'></script>
 </body>
-</html>
+    </html>
